@@ -1,0 +1,30 @@
+---
+// JavaScript section for server-side logic.
+const currentDate = new Date();
+const month = currentDate.getMonth();
+const day = currentDate.getDate();
+let greeting;
+
+// Check the date and set a greeting
+if (month === 11) { // December (month is 0-indexed)
+  if (day >= 23 && day <= 26) {
+    greeting = "Merry Christmas!";
+  } else if (day > 26) {
+    greeting = "Happy New Year!";
+  } else {
+    greeting = "Welcome to our festive page!";
+  }
+} else {
+  greeting = "Welcome!";
+}
+---
+
+<html>
+  <head>
+    <title>Greeting with Astro.js</title>
+  </head>
+  <body>
+    <h1>{greeting}</h1>
+    <p>Enjoy the holiday season with our Astro.js app!</p>
+  </body>
+</html>
